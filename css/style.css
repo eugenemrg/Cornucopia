@@ -36,17 +36,33 @@ nav a{
 }
 
 nav a:hover{
-    color: #fcbf49;
+    color: #faa307;
 }
 
 .search {
     height: 80vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-content: center;
     align-items: center;
     background: url('/assets/restaurant_icons.png');
     background-repeat: repeat;
+}
+
+.search .hero-header{
+    font-size: 5.6em;
+    font-weight: 600;
+    color: #212529;
+    font-family: var(--font-heading);
+}
+
+.search .hero-header span{
+    color: #faa307;
+}
+
+.search .hero-sub-heading{
+    font-size: 2.4em;
+    margin-bottom: 48px;
 }
 
 form {
