@@ -1,4 +1,4 @@
-# PHASE 4 - WEEK 4 - FINAL PROJECT
+# PHASE 1 - WEEK 4 - FINAL PROJECT
 
 # Cornucopia
 
