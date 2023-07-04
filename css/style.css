@@ -21,6 +21,28 @@ h1, h2, h3, h4 {
     --font-body: 'Source Sans 3', sans-serif;
 }
 
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
+    padding: 24px;
+    text-transform: capitalize;
+}
+
+nav a:hover{
+    color: grey;
+}
+
 .search {
     height: 80vh;
     display: flex;
