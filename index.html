@@ -12,7 +12,32 @@
     <title>Cornucopia</title>
     <script src="./js/script.js" defer></script>
 </head>
+
 <body>
-    
+    <div class="search">
+        <form action="#" method="get">
+            <select name="c" id="dropdown">
+                <option value="none">Category</option>
+                <option value="beef">beef</option>
+                <option value="chicken">chicken</option>
+                <option value="dessert">dessert</option>
+                <option value="lamb">lamb</option>
+                <option value="pasta">pasta</option>
+                <option value="pork">Pork</option>
+                <option value="seafood">seafood</option>
+                <option value="side">side</option>
+                <option value="starter">starter</option>
+                <option value="vegan">vegan</option>
+                <option value="vegetarian">vegetarian</option>
+                <option value="breakfast">breakfast</option>
+                <option value="goat">goat</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+            <input type="text" name="search" id="input" placeholder="Find a recipe, search by name or category">
+            <button type="submit"><i class="fa-solid fa-magnifying-glass fa-2x"></i></button>
+        </form>
+    </div>
+    <div class="results"></div>
 </body>
+
 </html>
