@@ -214,3 +214,95 @@ option:first-child {
     margin-left: 4px;
     line-height: 1.5;
 }
+
+.recipe-view{
+    /* top: 0; */
+    width: 100%;
+    position: absolute;
+    padding: 15%;
+}
+
+.recipe-content{
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    
+    display: flex;
+    border-radius: 16px;
+    flex-direction: row;box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.recipe-about{
+    flex: 1 0 400px;
+    position: sticky;
+    top: 0px;
+}
+
+.recipe-about .recipe-thumbnail{
+    width: 100%;
+    border-radius: 16px 4px 16px 4px;
+}
+
+.recipe-name, .recipe-origin, .recipe-category, .recipe-tags{
+    padding: 2px 24px;
+    font-size: 1em;
+}
+
+.recipe-name{
+    font-size: 1.4em;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 24px;
+    color: rgb(68, 68, 68);
+}
+
+.recipe-origin{
+    color: #faa307;
+}
+
+.recipe-category{
+    color: rgb(68, 68, 68);
+}
+
+.recipe-tags{
+    margin: 12px 0px 24px 0px;
+    color: rgb(68, 68, 68);
+}
+
+.recipe-tags .tag{
+    color: rgb(68, 68, 68);
+    padding: 0px 2px;
+    font-size: 1em;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-style: dotted;
+}
+
+.recipe-directions{
+    flex: 8 0 200px;
+    padding: 24px 48px;
+}
+
+.recipe-heading{
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #faa307;
+}
+
+.recipe-title{
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 12px 0px;
+    color: rgb(68, 68, 68);
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-color: #faa307;
+    text-decoration-style: dotted;
+}
+
+.instructions-text{
+    padding-bottom: 48px;
+}
