@@ -45,7 +45,7 @@ nav a:hover{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url(/assets/background.png);
+    background: url('../assets/background.png');
     background-repeat: repeat;
 }
 
