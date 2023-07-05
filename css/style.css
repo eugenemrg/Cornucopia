@@ -174,7 +174,8 @@ option:first-child {
     height: 100%;
     vertical-align: middle;
     font-size: 0.8em;
-    margin-left: 2px;
+    margin-left: 4px;
+    line-height: 1.5;
 }
 
 .meal-recipe:hover{
