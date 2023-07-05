@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', (e) => {
+
+    showFeatured()
+
     document.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault()
 
@@ -10,6 +13,22 @@ document.addEventListener('DOMContentLoaded', (e) => {
         }
     })
 })
+
+function showFeatured() {
+    fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
+    .then(res => res.json())
+    .then(data => {
+
+        let featuredContainer = document.querySelector('.featured')
+        featuredContainer.innerText = ''
+
+        data.meals.forEach(meal => {
+            populateAndAppendCards(featuredContainer, meal)
+        })
+
+        console.log(data);
+    })
+}
 
 function handleSearch() {
     // Show loading icon
