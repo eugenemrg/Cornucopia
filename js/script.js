@@ -78,6 +78,9 @@ function showRandom() {
 function populateAndAppendCards(containerElement, meal) {
     const dish = document.createElement('div')
     dish.className = 'dish'
+    dish.addEventListener('click', (e) => {
+        populateRecipe(meal)
+    })
 
     const thumbnail = document.createElement('img')
     thumbnail.className = 'meal-thumbnail'
@@ -111,4 +114,41 @@ function populateAndAppendCards(containerElement, meal) {
     dish.appendChild(recipeLink)
 
     containerElement.appendChild(dish)
+}
+
+function populateRecipe(mealObject) {
+    const about = document.querySelector('recipe-about')
+    const ingredients = document.querySelector('recipe-ingredients')
+    const instructions = document.querySelector('instructions-text')
+
+    const recipeObject = cleanAndFormatRecipeDetails(mealObject)
+}
+
+function cleanAndFormatRecipeDetails(mealObject) {
+    const cleanObject = {}
+    Object.keys(mealObject).forEach(key => {
+        if (mealObject[key] !== undefined && mealObject[key] !== null && mealObject[key] != '') {
+            cleanObject[key] = mealObject[key]
+        }
+    })
+
+    const formattedObject = {}
+    formattedObject.ingredients = []
+
+    Object.keys(cleanObject).forEach(key => {
+        if (key === 'strInstructions') {
+            formattedObject[key] = cleanObject[key].replace(/(\r\n|\r|\n)/g, '<br>')
+        } else if (!key.startsWith('strIngredient') && !key.startsWith('strMeasure')) {
+            formattedObject[key] = cleanObject[key]
+        } else {
+            if (key.startsWith('strIngredient')) {
+                let index = key.replace('strIngredient', '')
+                let quantity = cleanObject[`strMeasure${index}`]
+                let ingredient = cleanObject[key]
+                formattedObject.ingredients.push(`${quantity} ${ingredient}`)
+            }
+        }
+    })
+
+    return formattedObject
 }
