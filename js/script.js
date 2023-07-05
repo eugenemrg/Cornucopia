@@ -16,18 +16,16 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 function showFeatured() {
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
-    .then(res => res.json())
-    .then(data => {
+        .then(res => res.json())
+        .then(data => {
 
-        let featuredContainer = document.querySelector('.featured')
-        featuredContainer.innerText = ''
+            let featuredContainer = document.querySelector('.featured')
+            featuredContainer.innerText = ''
 
-        data.meals.forEach(meal => {
-            populateAndAppendCards(featuredContainer, meal)
+            data.meals.forEach(meal => {
+                populateAndAppendCards(featuredContainer, meal)
+            })
         })
-
-        console.log(data);
-    })
 }
 
 function handleSearch() {
@@ -100,7 +98,7 @@ function populateAndAppendCards(containerElement, meal) {
 
     const recipeLink = document.createElement('p')
     recipeLink.className = 'meal-recipe'
-    recipeLink.innerText = 'Go to recipe'
+    recipeLink.innerText = 'Show recipe'
 
     const recipeLinkIcon = document.createElement('i')
     recipeLinkIcon.className = 'fa-solid fa-chevron-right'
