@@ -118,5 +118,65 @@ option:first-child {
 }
 
 .results{
-    padding: 10%;
+    /* padding: 10%; */
+}
+
+/* RANDOM */
+.random{
+    padding: 48px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.dish{
+    width: 320px;
+    flex: 0 1 320px;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    border-radius: 12px;
+}
+
+.meal-name, .meal-thumbnail, .meal-origin, .meal-recipe{
+    display: inline-block;
+    width: 100%;
+}
+
+.dish p:last-child{
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.meal-name, .meal-origin, .meal-recipe{
+    padding: 2px 24px;
+}
+
+.meal-thumbnail{
+    border-radius: 12px 12px 0px 0px;
+    margin-bottom: 16px;
+}
+
+.meal-name{
+    text-transform: capitalize;
+    font-size: 1.2em;
+    /* font-weight: bold; */
+}
+
+.meal-origin{
+    color: #faa307;
+}
+
+.meal-recipe{
+    color: grey;
+}
+
+.meal-recipe i{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    font-size: 0.8em;
+    margin-left: 4px;
+}
+
+.meal-recipe:hover{
+    color: #faa307;
 }
