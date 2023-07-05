@@ -1,7 +1,13 @@
 document.addEventListener('DOMContentLoaded', (e) => {
     document.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault()
-        handleSearch()
+
+        // validate user input
+        if(document.getElementById('input').value.trim().length !== 0){
+            handleSearch()
+        }else{
+            document.getElementById('input').value = ''
+        }
     })
 })
 
