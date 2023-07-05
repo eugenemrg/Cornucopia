@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,12 @@
     <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@200;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@200;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Cornucopia</title>
     <script src="./js/script.js" defer></script>
 </head>
@@ -50,8 +55,8 @@
         </form>
     </div>
     <div class="results"></div>
-    <div class="featured" id="features-section"></div>
-    <div class="random" id="random-section">
+    <div class="featured hide" id="features-section"></div>
+    <div class="random hide" id="random-section">
         <!-- <div class="dish">
             <img src="https://www.themealdb.com/images/media/meals/ypxvwv1505333929.jpg" alt="" class="meal-thumbnail">
             <p class="meal-name">Test Name</p>
@@ -59,6 +64,51 @@
             <p class="meal-category">Side</p>
             <p class="meal-recipe">Go to recipe<i class="fa-solid fa-chevron-right"></i></p>
         </div> -->
+    </div>
+    <div class="recipe-view hide" id="recipe-view-section">
+        <div class="recipe-content">
+            <div class="recipe-about">
+                <img src="https://www.themealdb.com/images/media/meals/ypxvwv1505333929.jpg" alt=""
+                    class="recipe-thumbnail">
+                <p class="recipe-name">Test Name</p>
+                <p class="recipe-origin">Kenya</p>
+                <p class="recipe-category">Side</p>
+                <p class="recipe-tags">
+                    <span class="tag">meat</span><span class="tag">casserole</span>
+                </p>
+                <!-- <p class="recipe video"></p> -->
+            </div>
+            <div class="recipe-directions">
+                <div class="recipe-ingredients">
+                    <p>soy sauce</p>
+                    <p>water</p>
+                    <p>brown sugar</p>
+                    <p>ground ginger</p>
+                    <p>minced garlic</p>
+                    <p>cornstarch</p>
+                    <p>chicken breasts</p>
+                    <p>stir-fry vegetables</p>
+                    <p>brown rice</p>
+                </div>
+                <div class="recipe-instructions">
+                    <p class="instructions-text">
+                        Preheat oven to 350° F. Spray a 9x13-inch baking pan with non-stick spray.\r\nCombine soy sauce,
+                        ½ cup water, brown sugar, ginger and garlic in a small saucepan and cover. Bring to a boil over
+                        medium heat. Remove lid and cook for one minute once boiling.\r\nMeanwhile, stir together the
+                        corn starch and 2 tablespoons of water in a separate dish until smooth. Once sauce is boiling,
+                        add mixture to the saucepan and stir to combine. Cook until the sauce starts to thicken then
+                        remove from heat.\r\nPlace the chicken breasts in the prepared pan. Pour one cup of the sauce
+                        over top of chicken. Place chicken in oven and bake 35 minutes or until cooked through. Remove
+                        from oven and shred chicken in the dish using two forks.\r\n*Meanwhile, steam or cook the
+                        vegetables according to package directions.\r\nAdd the cooked vegetables and rice to the
+                        casserole dish with the chicken. Add most of the remaining sauce, reserving a bit to drizzle
+                        over the top when serving. Gently toss everything together in the casserole dish until combined.
+                        Return to oven and cook 15 minutes. Remove from oven and let stand 5 minutes before serving.
+                        Drizzle each serving with remaining sauce. Enjoy!
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
