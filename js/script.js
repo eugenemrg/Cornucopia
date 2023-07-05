@@ -131,9 +131,8 @@ function populateRecipe(mealObject) {
     document.querySelector('.recipe-category').innerText = recipeObject.strCategory
     document.querySelector('.recipe-thumbnail').src = recipeObject.strMealThumb
 
-    console.log(recipeObject);
-
-    if('strTags' in recipeObject){
+    if(recipeObject.strTags !== undefined){
+        tags.innerText = 'Tags:'
         recipeObject.strTags.split(',').forEach(item => {
             let tagItem = document.createElement('span')
             tagItem.className = 'tag'
@@ -141,7 +140,7 @@ function populateRecipe(mealObject) {
             tags.appendChild(tagItem)
         })
     }else{
-        tags.innerText = 'No tags found'
+        tags.innerText = 'Tags: No tags found'
     }
 
     recipeObject.ingredients.forEach(item => {
