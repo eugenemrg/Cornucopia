@@ -79,13 +79,22 @@ function showRandom(){
             mealOrigin.className = 'meal-origin'
             mealOrigin.innerText = meal.strArea
 
+            const mealCategory = document.createElement('p')
+            mealCategory.className = 'meal-category'
+            mealCategory.innerText = meal.strCategory
+
             const recipeLink = document.createElement('p')
             recipeLink.className = 'meal-recipe'
-            recipeLink.innerText = 'Link to recipe'
+            recipeLink.innerText = 'Go to recipe'
 
+            const recipeLinkIcon = document.createElement('i')
+            recipeLinkIcon.className = 'fa-solid fa-chevron-right'
+
+            recipeLink.appendChild(recipeLinkIcon)
             dish.appendChild(thumbnail)
             dish.appendChild(mealName)
             dish.appendChild(mealOrigin)
+            dish.appendChild(mealCategory)
             dish.appendChild(recipeLink)
 
             randomDishContainer.appendChild(dish)
