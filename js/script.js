@@ -117,11 +117,41 @@ function populateAndAppendCards(containerElement, meal) {
 }
 
 function populateRecipe(mealObject) {
-    const about = document.querySelector('recipe-about')
-    const ingredients = document.querySelector('recipe-ingredients')
-    const instructions = document.querySelector('instructions-text')
+    const ingredients = document.querySelector('.recipe-ingredients')
+    const instructions = document.querySelector('.instructions-text')
+    const tags = document.querySelector('.recipe-tags')
+
+    // Clear elements
+    ingredients.innerText = ''
 
     const recipeObject = cleanAndFormatRecipeDetails(mealObject)
+
+    document.querySelector('.recipe-name').innerText = recipeObject.strMeal
+    document.querySelector('.recipe-origin').innerText = recipeObject.strArea
+    document.querySelector('.recipe-category').innerText = recipeObject.strCategory
+    document.querySelector('.recipe-thumbnail').src = recipeObject.strMealThumb
+
+    console.log(recipeObject);
+
+    if('strTags' in recipeObject){
+        recipeObject.strTags.split(',').forEach(item => {
+            let tagItem = document.createElement('span')
+            tagItem.className = 'tag'
+            tagItem.innerText = item
+            tags.appendChild(tagItem)
+        })
+    }else{
+        tags.innerText = 'No tags found'
+    }
+
+    recipeObject.ingredients.forEach(item => {
+        let ingredient = document.createElement('p')
+        ingredient.className = 'ingredient-item'
+        ingredient.innerText = item
+        ingredients.append(ingredient)
+    })
+
+    instructions.innerHTML = recipeObject.strInstructions
 }
 
 function cleanAndFormatRecipeDetails(mealObject) {
