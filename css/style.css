@@ -119,6 +119,12 @@ option:first-child {
 
 .results{
     /* padding: 10%; */
+    padding: 48px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
 }
 
 /* RANDOM */
@@ -134,6 +140,8 @@ option:first-child {
     flex: 0 1 320px;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
     border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 
 .meal-name, .meal-thumbnail, .meal-origin, .meal-recipe, .meal-category{
@@ -157,6 +165,7 @@ option:first-child {
 .meal-thumbnail{
     border-radius: 12px 12px 0px 0px;
     margin-bottom: 16px;
+    border-bottom: 27, 31, 35, 0.15;
 }
 
 .meal-name{
