@@ -123,7 +123,7 @@ option:first-child {
     font-weight: bold;
 }
 
-.results, .featured{
+.results, .featured, .random{
     /* padding: 10%; */
     padding: 48px 0px;
     display: flex;
@@ -133,19 +133,16 @@ option:first-child {
     gap: 28px;
 }
 
+.hide{
+    display: none;
+}
+
 .featured{
     scroll-padding-top: 80px;
 }
 
-/* RANDOM */
-.random{
-    padding: 48px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
 .dish{
+    cursor: pointer;
     width: 320px;
     flex: 0 1 320px;
     /* box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px; */
@@ -195,6 +192,10 @@ option:first-child {
     color: grey;
 }
 
+.dish:hover .meal-recipe{
+    color: #faa307;
+}
+
 .meal-recipe i{
     display: inline-block;
     height: 100%;
@@ -202,8 +203,4 @@ option:first-child {
     font-size: 0.8em;
     margin-left: 4px;
     line-height: 1.5;
-}
-
-.meal-recipe:hover{
-    color: #faa307;
 }
