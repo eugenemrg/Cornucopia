@@ -24,41 +24,7 @@ function handleSearch() {
             resultsContainer.innerText = ''
 
             data.meals.forEach(meal => {
-                const dish = document.createElement('div')
-                dish.className = 'dish'
-
-                const thumbnail = document.createElement('img')
-                thumbnail.className = 'meal-thumbnail'
-                thumbnail.src = meal.strMealThumb
-                thumbnail.alt = meal.strMealThumb
-
-                const mealName = document.createElement('p')
-                mealName.className = 'meal-name'
-                mealName.innerText = meal.strMeal
-
-                const mealOrigin = document.createElement('p')
-                mealOrigin.className = 'meal-origin'
-                mealOrigin.innerText = meal.strArea
-
-                const mealCategory = document.createElement('p')
-                mealCategory.className = 'meal-category'
-                mealCategory.innerText = meal.strCategory
-
-                const recipeLink = document.createElement('p')
-                recipeLink.className = 'meal-recipe'
-                recipeLink.innerText = 'Go to recipe'
-
-                const recipeLinkIcon = document.createElement('i')
-                recipeLinkIcon.className = 'fa-solid fa-chevron-right'
-
-                recipeLink.appendChild(recipeLinkIcon)
-                dish.appendChild(thumbnail)
-                dish.appendChild(mealName)
-                dish.appendChild(mealOrigin)
-                dish.appendChild(mealCategory)
-                dish.appendChild(recipeLink)
-
-                resultsContainer.appendChild(dish)
+                populateAndAppendCards(resultsContainer, meal)
             });
 
             // Show search icon after loading is complete
@@ -80,41 +46,52 @@ function showRandom() {
             randomDishContainer.innerText = ''
 
             mealsArray.forEach(meal => {
-                const dish = document.createElement('div')
-                dish.className = 'dish'
-
-                const thumbnail = document.createElement('img')
-                thumbnail.className = 'meal-thumbnail'
-                thumbnail.src = meal.strMealThumb
-                thumbnail.alt = meal.strMealThumb
-
-                const mealName = document.createElement('p')
-                mealName.className = 'meal-name'
-                mealName.innerText = meal.strMeal
-
-                const mealOrigin = document.createElement('p')
-                mealOrigin.className = 'meal-origin'
-                mealOrigin.innerText = meal.strArea
-
-                const mealCategory = document.createElement('p')
-                mealCategory.className = 'meal-category'
-                mealCategory.innerText = meal.strCategory
-
-                const recipeLink = document.createElement('p')
-                recipeLink.className = 'meal-recipe'
-                recipeLink.innerText = 'Go to recipe'
-
-                const recipeLinkIcon = document.createElement('i')
-                recipeLinkIcon.className = 'fa-solid fa-chevron-right'
-
-                recipeLink.appendChild(recipeLinkIcon)
-                dish.appendChild(thumbnail)
-                dish.appendChild(mealName)
-                dish.appendChild(mealOrigin)
-                dish.appendChild(mealCategory)
-                dish.appendChild(recipeLink)
-
-                randomDishContainer.appendChild(dish)
+                populateAndAppendCards(randomDishContainer, meal)
             })
         })
+}
+
+/**
+ * Generate card containing meal details using meal object passed as second parameter, 
+ * append generated card to container element passed as first parameter
+ * 
+ * @param {Element} containerElement Element holding the generated cards
+ * @param {object} meal Meal object containing details about meal to be added to generated card
+ */
+function populateAndAppendCards(containerElement, meal) {
+    const dish = document.createElement('div')
+    dish.className = 'dish'
+
+    const thumbnail = document.createElement('img')
+    thumbnail.className = 'meal-thumbnail'
+    thumbnail.src = meal.strMealThumb
+    thumbnail.alt = meal.strMealThumb
+
+    const mealName = document.createElement('p')
+    mealName.className = 'meal-name'
+    mealName.innerText = meal.strMeal
+
+    const mealOrigin = document.createElement('p')
+    mealOrigin.className = 'meal-origin'
+    mealOrigin.innerText = meal.strArea
+
+    const mealCategory = document.createElement('p')
+    mealCategory.className = 'meal-category'
+    mealCategory.innerText = meal.strCategory
+
+    const recipeLink = document.createElement('p')
+    recipeLink.className = 'meal-recipe'
+    recipeLink.innerText = 'Go to recipe'
+
+    const recipeLinkIcon = document.createElement('i')
+    recipeLinkIcon.className = 'fa-solid fa-chevron-right'
+
+    recipeLink.appendChild(recipeLinkIcon)
+    dish.appendChild(thumbnail)
+    dish.appendChild(mealName)
+    dish.appendChild(mealOrigin)
+    dish.appendChild(mealCategory)
+    dish.appendChild(recipeLink)
+
+    containerElement.appendChild(dish)
 }
