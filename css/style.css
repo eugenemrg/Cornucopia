@@ -3,6 +3,12 @@
     --font-body: 'Source Sans 3', sans-serif;
 }
 
+html{
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 80px;
+    scroll-behavior: smooth;
+}
+
 *{
     padding: 0px;
     margin: 0px;
@@ -125,6 +131,10 @@ option:first-child {
     flex-wrap: wrap;
     justify-content: center;
     gap: 28px;
+}
+
+.featured{
+    scroll-padding-top: 80px;
 }
 
 /* RANDOM */
