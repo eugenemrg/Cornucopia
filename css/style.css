@@ -136,9 +136,13 @@ option:first-child {
     border-radius: 12px;
 }
 
-.meal-name, .meal-thumbnail, .meal-origin, .meal-recipe{
+.meal-name, .meal-thumbnail, .meal-origin, .meal-recipe, .meal-category{
     display: inline-block;
     width: 100%;
+}
+
+.dish :nth-child(2){
+    margin-bottom: 8px;
 }
 
 .dish p:last-child{
@@ -146,7 +150,7 @@ option:first-child {
     margin-bottom: 24px;
 }
 
-.meal-name, .meal-origin, .meal-recipe{
+.meal-name, .meal-origin, .meal-recipe, .meal-category{
     padding: 2px 24px;
 }
 
@@ -159,6 +163,10 @@ option:first-child {
     text-transform: capitalize;
     font-size: 1.2em;
     /* font-weight: bold; */
+}
+
+.meal-category{
+    color: grey;
 }
 
 .meal-origin{
