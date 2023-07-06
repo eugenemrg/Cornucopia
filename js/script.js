@@ -218,13 +218,15 @@ function handleSearchByType(category) {
                     let ingredientDiv = document.createElement('div')
 
                     let iTitle = document.createElement('p')
+                    iTitle.className = 'ingredient-title'
                     iTitle.innerText = ingredient.strIngredient
 
                     let iDescription = document.createElement('p')
-                    iDescription = (ingredient.strDescription === null) ? 'No description' : ingredient.strDescription
+                    iDescription.className = 'ingredient-desc'
+                    iDescription.innerText = (ingredient.strDescription === null) ? 'No description' : ingredient.strDescription
 
-                    ingredientDiv.append(iTitle)
-                    ingredientDiv.append(iDescription)
+                    ingredientDiv.appendChild(iTitle)
+                    ingredientDiv.appendChild(iDescription)
 
                     ingredientsContainer.appendChild(ingredientDiv)
                 });
