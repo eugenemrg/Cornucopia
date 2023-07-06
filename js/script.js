@@ -464,4 +464,5 @@ function hideAllContainers() {
     document.querySelector('.results').classList.add('hide')
     document.querySelector('.featured').classList.add('hide')
     document.querySelector('.random').classList.add('hide')
+    document.querySelector('.ingredients').classList.add('hide')
 }
