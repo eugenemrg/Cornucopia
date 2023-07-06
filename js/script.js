@@ -58,6 +58,13 @@ function handleSearch() {
         .then(res => res.json())
         .then(data => {
 
+            // handle no results found
+            if(data.meals === null){
+                hideAllContainers()
+                document.querySelector('.section-title').innerText = `No results found for '${document.getElementById('input').value}'`
+                return
+            }
+
             const resultsContainer = document.querySelector('.results')
             resultsContainer.innerText = ''
             document.querySelector('.section-title').innerText = `Searching for: ${document.getElementById('input').value}`
