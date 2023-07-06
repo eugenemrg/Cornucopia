@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     document.getElementById('featured').addEventListener('click', (e) => {
         e.preventDefault()
 
+        hideAllContainers()
         document.querySelector('#features-section').classList.remove('hide')
         showFeatured()
     })
@@ -210,4 +211,10 @@ function showRecipeContainer() {
 
         recipeContainer.classList.replace('show', 'hide')
     })
+}
+
+function hideAllContainers(){
+    document.querySelector('.results').classList.add('hide')
+    document.querySelector('.featured').classList.add('hide')
+    document.querySelector('.random').classList.add('hide')
 }
