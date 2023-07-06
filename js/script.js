@@ -9,7 +9,15 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
         // validate user input
         if (document.getElementById('input').value.trim().length !== 0) {
-            handleSearch()
+
+            let searchCategory = document.getElementById('dropdown').value
+
+            // handle search by type, check if any category is selected or not
+            if (searchCategory === 'none') {
+                handleSearch()
+            } else {
+                handleSearchByType(searchCategory)
+            }
         } else {
             document.getElementById('input').value = ''
         }
@@ -157,6 +165,138 @@ function handleSearch() {
             searchIcon.className = 'fa-solid fa-magnifying-glass fa-2x'
             console.error(err)
         })
+}
+
+function handleSearchByType(category) {
+    // Show loading icon
+    const searchIcon = document.querySelector('form .fa-solid')
+    searchIcon.className = 'fa-solid fa-circle-notch fa-spin fa-2x'
+
+    if (category === 'ingredient') {
+
+        fetch(`https://www.themealdb.com/api/json/v1/1/list.php?i=${category}`)
+            .then(res => res.json())
+            .then(data => {
+
+                let newObj = []
+                const searchInput = document.getElementById('input').value
+                console.log(newObj);
+
+                // filter results
+                if (data.meals !== null) {
+                    data.meals.forEach(ingredient => {
+                        if (ingredient.strIngredient.includes(searchInput)) {
+                            newObj.push(ingredient)
+                        }
+                    })
+                }
+
+                const searchIcon = document.querySelector('form .fa-solid')
+
+                // handle no results found after filter
+                if (newObj.length === 0) {
+                    // Show search icon after loading is complete
+                    searchIcon.className = 'fa-solid fa-magnifying-glass fa-2x'
+                    hideAllContainers()
+
+                    document.querySelector('.section-title').innerText = `No results found for '${searchInput}' in the ingredients `
+                    return
+                }
+
+                // Get the ingredients container
+                const ingredientsContainer = document.querySelector('.ingredients')
+                ingredientsContainer.innerText = ''
+
+                // Change the section title
+                document.querySelector('.section-title').innerText = `Result for '${searchInput}' in the ingredients`
+
+                console.log(newObj);
+
+                // Fetch full meal details and append it onto results container
+                newObj.forEach(ingredient => {
+                    console.log(ingredient);
+                    let ingredientDiv = document.createElement('div')
+
+                    let iTitle = document.createElement('p')
+                    iTitle.innerText = ingredient.strIngredient
+
+                    let iDescription = document.createElement('p')
+                    iDescription = (ingredient.strDescription === null) ? 'No description' : ingredient.strDescription
+
+                    ingredientDiv.append(iTitle)
+                    ingredientDiv.append(iDescription)
+
+                    ingredientsContainer.appendChild(ingredientDiv)
+                });
+
+                hideAllContainers()
+                ingredientsContainer.classList.remove('hide')
+
+                // Show search icon after loading is complete
+                searchIcon.className = 'fa-solid fa-magnifying-glass fa-2x'
+
+                // Scroll section into view
+                document.querySelector('.section-title').scrollIntoView()
+            })
+
+    } else {
+        fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+            .then(res => res.json())
+            .then(data => {
+
+                let newObj = []
+                const searchInput = document.getElementById('input').value
+                console.log(newObj);
+
+                // filter results
+                if (data.meals !== null) {
+                    data.meals.forEach(meal => {
+                        if (meal.strMeal.includes(searchInput)) {
+                            newObj.push(meal)
+                        }
+                    })
+                }
+
+                const searchIcon = document.querySelector('form .fa-solid')
+
+                // handle no results found after filter
+                if (newObj.length === 0) {
+                    // Show search icon after loading is complete
+                    searchIcon.className = 'fa-solid fa-magnifying-glass fa-2x'
+                    hideAllContainers()
+
+                    document.querySelector('.section-title').innerText = `No results found for '${searchInput}' in ${category} category `
+                    return
+                }
+
+                // Get the results container
+                const resultsContainer = document.querySelector('.results')
+                resultsContainer.innerText = ''
+
+                // Change the section title
+                document.querySelector('.section-title').innerText = `Result for '${searchInput}' in ${category} category`
+
+                console.log(newObj);
+
+                // Fetch full meal details and append it onto results container
+                newObj.forEach(meal => {
+                    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`)
+                        .then(res => res.json())
+                        .then(data => {
+                            populateAndAppendCards(resultsContainer, data.meals[0])
+                        })
+                });
+
+                hideAllContainers()
+                resultsContainer.classList.remove('hide')
+
+                // Show search icon after loading is complete
+                searchIcon.className = 'fa-solid fa-magnifying-glass fa-2x'
+
+                // Scroll section into view
+                document.querySelector('.section-title').scrollIntoView()
+            })
+    }
 }
 
 // Fetch a random meal and display it
