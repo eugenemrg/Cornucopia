@@ -16,11 +16,17 @@ document.addEventListener('DOMContentLoaded', (e) => {
     document.getElementById('featured').addEventListener('click', (e) => {
         e.preventDefault()
         showFeatured()
+
+        // Scroll section into view
+        document.querySelector('.section-title').scrollIntoView()
     })
 
     document.getElementById('random').addEventListener('click', (e) => {
         e.preventDefault()
         showRandom()
+
+        // Scroll section into view
+        document.querySelector('.section-title').scrollIntoView()
     })
 })
 
@@ -64,6 +70,9 @@ function handleSearch() {
             searchIcon.className = 'fa-solid fa-magnifying-glass fa-2x'
             hideAllContainers()
             resultsContainer.classList.remove('hide')
+
+            // Scroll section into view
+            document.querySelector('.section-title').scrollIntoView()
         })
         .catch(err => {
             // Show search icon after loading is complete
