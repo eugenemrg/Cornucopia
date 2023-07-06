@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
     showFeatured()
     updateNavigationCategories()
 
+    // Search event listener
     document.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault()
 
@@ -36,7 +37,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
     })
 })
 
+// Fetch list of categories and add them to the category drop down on the navigation
 function updateNavigationCategories() {
+
+    // Get navigation categories drop-down container
     const categoryContainer = document.querySelector('.categories-items-container')
     categoryContainer.innerText = ''
 
@@ -44,17 +48,24 @@ function updateNavigationCategories() {
         .then(res => res.json())
         .then(data => {
             data.meals.forEach(categoryObject => {
+
+                // Create category element
                 const category = document.createElement('p')
                 category.innerText = categoryObject.strCategory;
+
+                // Add click listener to category element to show meals in category when user clicks the category
                 category.addEventListener('click', (e) => {
                     e.preventDefault()
                     showMealsForCategories(categoryObject)
                 })
+
+                // Append created category alement
                 categoryContainer.append(category)
             })
         })
 }
 
+// Fetch and display featured meals
 function showFeatured() {
 
     hideAllContainers()
@@ -74,15 +85,20 @@ function showFeatured() {
         })
 }
 
+// Display meals for selected meal category
 function showMealsForCategories(categoryObject) {
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryObject.strCategory}`)
         .then(res => res.json())
         .then(data => {
 
+            // Get the results container
             const resultsContainer = document.querySelector('.results')
             resultsContainer.innerText = ''
+
+            // Change the section title
             document.querySelector('.section-title').innerText = `${categoryObject.strCategory} category`
 
+            // Fetch full meal details and append it onto results container
             data.meals.forEach(meal => {
                 fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`)
                     .then(res => res.json())
@@ -118,10 +134,12 @@ function handleSearch() {
                 return
             }
 
+            // Get results container
             const resultsContainer = document.querySelector('.results')
             resultsContainer.innerText = ''
             document.querySelector('.section-title').innerText = `Searching for: ${document.getElementById('input').value}`
 
+            // Append meals on results container
             data.meals.forEach(meal => {
                 populateAndAppendCards(resultsContainer, meal)
             });
@@ -141,6 +159,7 @@ function handleSearch() {
         })
 }
 
+// Fetch a random meal and display it
 function showRandom() {
     fetch('https://www.themealdb.com/api/json/v1/1/random.php')
         .then(res => res.json())
@@ -208,6 +227,7 @@ function populateAndAppendCards(containerElement, meal) {
     containerElement.appendChild(dish)
 }
 
+// Add details recipe section for meal
 function populateRecipe(mealObject) {
     const ingredients = document.querySelector('.recipe-ingredients')
     const instructions = document.querySelector('.instructions-text')
@@ -245,6 +265,7 @@ function populateRecipe(mealObject) {
     instructions.innerHTML = recipeObject.strInstructions
 }
 
+// Format meal object contents e.g. paragraph, remove unnecessary items
 function cleanAndFormatRecipeDetails(mealObject) {
     const cleanObject = {}
     Object.keys(mealObject).forEach(key => {
@@ -274,6 +295,7 @@ function cleanAndFormatRecipeDetails(mealObject) {
     return formattedObject
 }
 
+// Display recipe section
 function showRecipeContainer() {
 
     const recipeContainer = document.querySelector('.recipe-view')
@@ -296,6 +318,7 @@ function showRecipeContainer() {
     })
 }
 
+// Remove all containers
 function hideAllContainers() {
     document.querySelector('.results').classList.add('hide')
     document.querySelector('.featured').classList.add('hide')
