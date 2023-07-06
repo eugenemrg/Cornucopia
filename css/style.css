@@ -248,6 +248,7 @@ option:first-child {
     flex: 1 0 400px;
     position: sticky;
     top: 0px;
+    text-align: center;
 }
 
 .recipe-about .recipe-thumbnail{
@@ -292,7 +293,8 @@ option:first-child {
 
 .recipe-directions{
     flex: 8 0 200px;
-    padding: 24px 48px;
+    padding: 24px 56px;
+    text-align: center;
 }
 
 .recipe-heading{
@@ -307,7 +309,7 @@ option:first-child {
     font-size: 1.2em;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 12px 0px;
+    padding: 24px 0px;
     color: rgb(68, 68, 68);
     text-decoration: underline;
     text-underline-offset: 6px;
