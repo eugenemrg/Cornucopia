@@ -22,6 +22,11 @@ document.addEventListener('DOMContentLoaded', (e) => {
         document.querySelector('.section-title').scrollIntoView()
     })
 
+    document.getElementById('ingredients').addEventListener('click' , (e) => {
+        e.preventDefault()
+        document.getElementById('dropdown').value = 'ingredient'
+    })
+
     document.getElementById('random').addEventListener('click', (e) => {
         e.preventDefault()
         showRandom()
