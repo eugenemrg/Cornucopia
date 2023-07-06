@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
 })
 
 function showFeatured() {
-    
+
     hideAllContainers()
     document.querySelector('#features-section').classList.remove('hide')
     document.querySelector('.section-title').innerText = 'featured'
@@ -59,8 +59,11 @@ function handleSearch() {
         .then(data => {
 
             // handle no results found
-            if(data.meals === null){
+            if (data.meals === null) {
+                // Show search icon after loading is complete
+                searchIcon.className = 'fa-solid fa-magnifying-glass fa-2x'
                 hideAllContainers()
+                
                 document.querySelector('.section-title').innerText = `No results found for '${document.getElementById('input').value}'`
                 return
             }
@@ -243,7 +246,7 @@ function showRecipeContainer() {
     })
 }
 
-function hideAllContainers(){
+function hideAllContainers() {
     document.querySelector('.results').classList.add('hide')
     document.querySelector('.featured').classList.add('hide')
     document.querySelector('.random').classList.add('hide')
