@@ -44,9 +44,44 @@ nav a{
     font-size: 1.2em;
     padding: 24px;
     text-transform: capitalize;
+    display: inline-block;
+    position: relative;
 }
 
 nav a:hover{
+    color: #faa307;
+}
+
+.categories-items-container{
+    /* display: inline-block; */
+    display: none;
+    position: absolute;
+    width: 180px;
+    top: 80px;
+    left: 0px;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+}
+
+nav a:hover > .categories-items-container {
+    display: inline-block;
+} 
+
+nav a:hover .categories-items-container p{
+    color: #212529;
+}
+
+.categories-items-container p{
+    padding: 12px;
+    border-top: 1px solid grey;
+}
+
+.categories-items-container p:first-child{
+    border-top: 0px solid grey;
+}
+
+nav a:hover .categories-items-container p:hover{
     color: #faa307;
 }
 
