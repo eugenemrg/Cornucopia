@@ -334,7 +334,7 @@ option:first-child {
 }
 
 .recipe-heading{
-    font-size: 2em;
+    font-size: 1.2em;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
@@ -352,7 +352,6 @@ option:first-child {
     text-decoration-color: #faa307;
     text-decoration-style: dotted;
 
-    font-size: 1.4em;
     font-family: var(--font-heading);
 }
 
