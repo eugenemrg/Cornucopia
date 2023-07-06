@@ -265,12 +265,13 @@ option:first-child {
     background-color: rgb(255, 255, 255, 0.85);
     backdrop-filter: blur(2px);
     height: 100vh;
-    padding: 5vh 15vw;
+    padding: 7.5vh 15vw;
 }
 
 .recipe-content{
     position: relative;
-    max-height: 90vh;
+    height: 85vh;
+    max-height: 85vh;
     overflow-y: auto;
     background-color: white;
     
