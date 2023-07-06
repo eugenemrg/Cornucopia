@@ -167,6 +167,7 @@ function handleSearch() {
         })
 }
 
+// Seach ingredient or meal by category
 function handleSearchByType(category) {
     // Show loading icon
     const searchIcon = document.querySelector('form .fa-solid')
