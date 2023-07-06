@@ -28,6 +28,7 @@ function showFeatured() {
     
     hideAllContainers()
     document.querySelector('#features-section').classList.remove('hide')
+    document.querySelector('.section-title').innerText = 'featured'
 
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
         .then(res => res.json())
@@ -53,6 +54,7 @@ function handleSearch() {
 
             const resultsContainer = document.querySelector('.results')
             resultsContainer.innerText = ''
+            document.querySelector('.section-title').innerText = `Searching for: ${document.getElementById('input').value}`
 
             data.meals.forEach(meal => {
                 populateAndAppendCards(resultsContainer, meal)
@@ -77,6 +79,7 @@ function showRandom() {
             const mealsArray = data.meals
             let randomDishContainer = document.querySelector('.random')
             randomDishContainer.innerText = ''
+            document.querySelector('.section-title').innerText = 'Random recipe'
 
             mealsArray.forEach(meal => {
                 populateAndAppendCards(randomDishContainer, meal)
