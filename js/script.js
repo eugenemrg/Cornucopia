@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
     document.getElementById('ingredients').addEventListener('click', (e) => {
         e.preventDefault()
         document.getElementById('dropdown').value = 'ingredient'
+        document.querySelector('#hero-section').scrollIntoView()
+        document.getElementById('input').focus()
     })
 
     document.getElementById('random').addEventListener('click', (e) => {
