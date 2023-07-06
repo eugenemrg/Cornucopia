@@ -80,6 +80,7 @@ function populateAndAppendCards(containerElement, meal) {
     dish.className = 'dish'
     dish.addEventListener('click', (e) => {
         populateRecipe(meal)
+        showRecipeContainer()
     })
 
     const thumbnail = document.createElement('img')
@@ -131,7 +132,7 @@ function populateRecipe(mealObject) {
     document.querySelector('.recipe-category').innerText = recipeObject.strCategory
     document.querySelector('.recipe-thumbnail').src = recipeObject.strMealThumb
 
-    if(recipeObject.strTags !== undefined){
+    if (recipeObject.strTags !== undefined) {
         tags.innerText = 'Tags:'
         recipeObject.strTags.split(',').forEach(item => {
             let tagItem = document.createElement('span')
@@ -139,7 +140,7 @@ function populateRecipe(mealObject) {
             tagItem.innerText = item
             tags.appendChild(tagItem)
         })
-    }else{
+    } else {
         tags.innerText = 'Tags: No tags found'
     }
 
@@ -180,4 +181,26 @@ function cleanAndFormatRecipeDetails(mealObject) {
     })
 
     return formattedObject
+}
+
+function showRecipeContainer() {
+
+    const recipeContainer = document.querySelector('.recipe-view')
+
+    // Show the recipe container
+    recipeContainer.classList.replace('hide', 'show')
+    recipeContainer.style.top = window.scrollY + 'px'
+
+    document.addEventListener("scroll", (event) => {
+        recipeContainer.classList.replace('show', 'hide')
+    })
+
+    // Close/hide recipe container when clicked
+    recipeContainer.addEventListener('click', (e) => {
+        e.preventDefault()
+        e.stopImmediatePropagation()
+        e.stopPropagation()
+
+        recipeContainer.classList.replace('show', 'hide')
+    })
 }
