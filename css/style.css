@@ -325,7 +325,7 @@ option:first-child {
     text-align: center;
     padding: 48px;
     font-size: 3.2em;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-family: var(--font-heading);
     color: #212529;
     text-transform: capitalize;
