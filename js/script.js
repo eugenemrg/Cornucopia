@@ -193,6 +193,9 @@ function handleSearchByType(category) {
                 }
 
                 const searchIcon = document.querySelector('form .fa-solid')
+                // Get the ingredients container
+                const ingredientsContainer = document.querySelector('.ingredients')
+                ingredientsContainer.innerText = ''
 
                 // handle no results found after filter
                 if (newObj.length === 0) {
@@ -203,10 +206,6 @@ function handleSearchByType(category) {
                     document.querySelector('.section-title').innerText = `No results found for '${searchInput}' in the ingredients `
                     return
                 }
-
-                // Get the ingredients container
-                const ingredientsContainer = document.querySelector('.ingredients')
-                ingredientsContainer.innerText = ''
 
                 // Change the section title
                 document.querySelector('.section-title').innerText = `Result for '${searchInput}' in the ingredients`
