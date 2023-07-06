@@ -130,7 +130,7 @@ option:first-child {
 
 .results, .featured, .random{
     /* padding: 10%; */
-    padding: 48px 0px;
+    /* padding: 48px 0px; */
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -319,4 +319,13 @@ option:first-child {
 
 .instructions-text{
     padding-bottom: 48px;
+}
+
+.section-title{
+    text-align: center;
+    padding: 48px;
+    font-size: 3.2em;
+    font-weight: bold;
+    font-family: var(--font-heading);
+    color: #212529;
 }
