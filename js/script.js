@@ -12,6 +12,13 @@ document.addEventListener('DOMContentLoaded', (e) => {
             document.getElementById('input').value = ''
         }
     })
+
+    document.getElementById('featured').addEventListener('click', (e) => {
+        e.preventDefault()
+
+        document.querySelector('#features-section').classList.remove('hide')
+        showFeatured()
+    })
 })
 
 function showFeatured() {
