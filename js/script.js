@@ -15,14 +15,20 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     document.getElementById('featured').addEventListener('click', (e) => {
         e.preventDefault()
-
-        hideAllContainers()
-        document.querySelector('#features-section').classList.remove('hide')
         showFeatured()
+    })
+
+    document.getElementById('random').addEventListener('click', (e) => {
+        e.preventDefault()
+        showRandom()
     })
 })
 
 function showFeatured() {
+    
+    hideAllContainers()
+    document.querySelector('#features-section').classList.remove('hide')
+
     fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
         .then(res => res.json())
         .then(data => {
@@ -54,6 +60,8 @@ function handleSearch() {
 
             // Show search icon after loading is complete
             searchIcon.className = 'fa-solid fa-magnifying-glass fa-2x'
+            hideAllContainers()
+            resultsContainer.classList.remove('hide')
         })
         .catch(err => {
             // Show search icon after loading is complete
@@ -73,6 +81,9 @@ function showRandom() {
             mealsArray.forEach(meal => {
                 populateAndAppendCards(randomDishContainer, meal)
             })
+
+            hideAllContainers()
+            randomDishContainer.classList.remove('hide')
         })
 }
 
