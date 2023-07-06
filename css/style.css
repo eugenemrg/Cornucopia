@@ -227,7 +227,8 @@ option:first-child {
 
 .recipe-view{
     z-index: 10001;
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.85);
+    backdrop-filter: blur(2px);
     height: 100vh;
     padding: 5vh 15vw;
 }
@@ -236,6 +237,7 @@ option:first-child {
     position: relative;
     max-height: 90vh;
     overflow-y: auto;
+    background-color: white;
     
     display: flex;
     border-radius: 16px;
