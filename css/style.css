@@ -9,6 +9,10 @@ html{
     scroll-behavior: smooth;
 }
 
+html, body{
+    position: relative;
+}
+
 *{
     padding: 0px;
     margin: 0px;
@@ -138,6 +142,12 @@ option:first-child {
     display: none;
 }
 
+.show{
+    display: block;
+    position: absolute;
+    /* top: 0px; */
+}
+
 .featured{
     scroll-padding-top: 80px;
 }
@@ -216,10 +226,10 @@ option:first-child {
 }
 
 .recipe-view{
-    /* top: 0; */
-    width: 100%;
-    position: absolute;
-    padding: 15%;
+    z-index: 10001;
+    background-color: white;
+    height: 100vh;
+    padding: 5vh 15vw;
 }
 
 .recipe-content{
