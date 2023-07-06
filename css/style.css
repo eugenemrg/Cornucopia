@@ -265,8 +265,9 @@ option:first-child {
     font-size: 1.4em;
     font-weight: 600;
     text-transform: uppercase;
-    padding: 12px 24px;
+    padding: 16px 24px;
     color: rgb(68, 68, 68);
+    font-family: var(--font-heading);
 }
 
 .recipe-origin{
@@ -315,6 +316,9 @@ option:first-child {
     text-underline-offset: 6px;
     text-decoration-color: #faa307;
     text-decoration-style: dotted;
+
+    font-size: 1.4em;
+    font-family: var(--font-heading);
 }
 
 .instructions-text{
