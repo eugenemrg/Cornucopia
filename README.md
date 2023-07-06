@@ -20,7 +20,7 @@ The website can:
 - Visual Studio Code, see [here](https://code.visualstudio.com/)
 - Windows Subsystem for Linux (WSL), details [here](https://learn.microsoft.com/en-us/windows/wsl/install)
 - Git
-- Github and GitHub pages [deployment](https://eugenemrg.github.io/phase-1-wk2-code-challenge/)
+- Github and GitHub pages [deployment](https://eugenemrg.github.io/Cornucopia/)
 - Any Modern Web Browser
 
 # Installation
