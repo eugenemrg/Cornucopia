@@ -173,16 +173,6 @@ option:first-child {
     gap: 28px;
 }
 
-.hide{
-    display: none;
-}
-
-.show{
-    display: block;
-    position: absolute;
-    /* top: 0px; */
-}
-
 .featured{
     scroll-padding-top: 80px;
 }
@@ -397,4 +387,14 @@ option:first-child {
     text-align: center;
     padding: 16px;
     font-size: 1.2em;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+    position: absolute;
+    /* top: 0px; */
 }
