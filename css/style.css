@@ -328,4 +328,5 @@ option:first-child {
     font-weight: bold;
     font-family: var(--font-heading);
     color: #212529;
+    text-transform: capitalize;
 }
