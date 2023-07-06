@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', (e) => {
 
     showFeatured()
+    updateNavigationCategories()
 
     document.querySelector('form').addEventListener('submit', (e) => {
         e.preventDefault()
@@ -29,6 +30,21 @@ document.addEventListener('DOMContentLoaded', (e) => {
         document.querySelector('.section-title').scrollIntoView()
     })
 })
+
+function updateNavigationCategories() {
+    const categoryContainer = document.querySelector('.categories-items-container')
+    categoryContainer.innerText = ''
+
+    fetch('https://www.themealdb.com/api/json/v1/1/list.php?c=list')
+    .then(res => res.json())
+    .then(data => {
+        data.meals.forEach(categoryObject => {
+            const category = document.createElement('p')
+            category.innerText = categoryObject.strCategory;
+            categoryContainer.append(category)
+        })
+    })
+}
 
 function showFeatured() {
 
@@ -63,7 +79,7 @@ function handleSearch() {
                 // Show search icon after loading is complete
                 searchIcon.className = 'fa-solid fa-magnifying-glass fa-2x'
                 hideAllContainers()
-                
+
                 document.querySelector('.section-title').innerText = `No results found for '${document.getElementById('input').value}'`
                 return
             }
