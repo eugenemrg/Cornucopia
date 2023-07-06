@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         document.querySelector('.section-title').scrollIntoView()
     })
 
-    document.getElementById('ingredients').addEventListener('click' , (e) => {
+    document.getElementById('ingredients').addEventListener('click', (e) => {
         e.preventDefault()
         document.getElementById('dropdown').value = 'ingredient'
     })
@@ -41,14 +41,18 @@ function updateNavigationCategories() {
     categoryContainer.innerText = ''
 
     fetch('https://www.themealdb.com/api/json/v1/1/list.php?c=list')
-    .then(res => res.json())
-    .then(data => {
-        data.meals.forEach(categoryObject => {
-            const category = document.createElement('p')
-            category.innerText = categoryObject.strCategory;
-            categoryContainer.append(category)
+        .then(res => res.json())
+        .then(data => {
+            data.meals.forEach(categoryObject => {
+                const category = document.createElement('p')
+                category.innerText = categoryObject.strCategory;
+                category.addEventListener('click', (e) => {
+                    e.preventDefault()
+                    showMealsForCategories(categoryObject)
+                })
+                categoryContainer.append(category)
+            })
         })
-    })
 }
 
 function showFeatured() {
@@ -67,6 +71,31 @@ function showFeatured() {
             data.meals.forEach(meal => {
                 populateAndAppendCards(featuredContainer, meal)
             })
+        })
+}
+
+function showMealsForCategories(categoryObject) {
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${categoryObject.strCategory}`)
+        .then(res => res.json())
+        .then(data => {
+
+            const resultsContainer = document.querySelector('.results')
+            resultsContainer.innerText = ''
+            document.querySelector('.section-title').innerText = `${categoryObject.strCategory} category`
+
+            data.meals.forEach(meal => {
+                fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${meal.idMeal}`)
+                    .then(res => res.json())
+                    .then(data => {
+                        populateAndAppendCards(resultsContainer, data.meals[0])
+                    })
+            });
+
+            hideAllContainers()
+            resultsContainer.classList.remove('hide')
+
+            // Scroll section into view
+            document.querySelector('.section-title').scrollIntoView()
         })
 }
 
