@@ -44,32 +44,44 @@ Visit [Cornucopia](https://eugenemrg.github.io/Cornucopia/)
 # Screenshots
 
 Landing page
+
 ![screenshot1](assets/screenshots/screenshot01.png)
 
+
 List all meal categories
+
 ![screenshot1](assets/screenshots/screenshot02.png)
 
+
 Explore meal category
+
 ![screenshot1](assets/screenshots/screenshot10.png)
+
 
 Search for meal by full or partial name
 
 ![screenshot1](assets/screenshots/screenshot04.png)
 
+
 Search for meal by category
 
 ![screenshot1](assets/screenshots/screenshot13.png)
+
 
 Search for ingredients
 
 ![screenshot1](assets/screenshots/screenshot06.png)
 
+
 Show recipe details
+
 ![screenshot1](assets/screenshots/screenshot07.png)
 
 ![screenshot1](assets/screenshots/screenshot09.png)
 
+
 Show random meal and recipe
+
 ![screenshot1](assets/screenshots/screenshot11.png)
 
 # Author
