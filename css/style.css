@@ -163,6 +163,10 @@ option:first-child {
     font-weight: bold;
 }
 
+.results, .featured, .random, .ingredients{
+    margin-bottom: 48px;
+}
+
 .results, .featured, .random{
     /* padding: 10%; */
     /* padding: 48px 0px; */
