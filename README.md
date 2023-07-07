@@ -53,26 +53,19 @@ Explore meal category
 ![screenshot1](assets/screenshots/screenshot10.png)
 
 Search for meal by full or partial name
-![screenshot1](assets/screenshots/screenshot03.png)
 
 ![screenshot1](assets/screenshots/screenshot04.png)
 
 Search for meal by category
-![screenshot1](assets/screenshots/screenshot12.png)
 
 ![screenshot1](assets/screenshots/screenshot13.png)
 
-![screenshot1](assets/screenshots/screenshot14.png)
-
 Search for ingredients
-![screenshot1](assets/screenshots/screenshot05.png)
 
 ![screenshot1](assets/screenshots/screenshot06.png)
 
 Show recipe details
 ![screenshot1](assets/screenshots/screenshot07.png)
-
-![screenshot1](assets/screenshots/screenshot08.png)
 
 ![screenshot1](assets/screenshots/screenshot09.png)
 
